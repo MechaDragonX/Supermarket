@@ -48,7 +48,7 @@ namespace Supermarket
         {
             PreferredCustomer log = Customers.First(x => x.ID == CustomerID);
             log.LoggedIn = false;
-            Console.WriteLine("You have successfully logged out, {0}!\nThanks for using {1}!\n", log.Name, Console.Title);
+            Console.WriteLine("You have successfully logged out, {0}!\n", log.Name);
         }
 
         public double Discount(CustomerType Type)
@@ -56,11 +56,11 @@ namespace Supermarket
             switch (Type)
             {
                 case CustomerType.Regular:
-                    return 0;
+                    return 1;
                 case CustomerType.Preferred:
-                    return 0.20;
+                    return 1.20;
                 case CustomerType.Premier:
-                    return 0.70;
+                    return 1.70;
             }
             return 0;
         }
